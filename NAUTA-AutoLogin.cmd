@@ -16,6 +16,7 @@ SET ping_delay=1
 SET pause_countdown=15
 
 SET connection_status=0
+SET connection_status_beep=1
 
 :://////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 :://	Main code
@@ -147,6 +148,10 @@ CALL :Init
 	ECHO [21;25HooO--(_)--Ooo-ooO--(_)--Ooo-ooO--(_)--Ooo-ooO--(_)--Ooo-ooO--(_)--Ooo-
 	ECHO [30m[48;2;127;127;127m
 	ECHO [22;25H  Freedom is the right to tell people what they do not want to hear.  
+
+	IF %connection_status_beep%==1 (
+		rundll32 user32.dll,MessageBeep
+	)
 
 	CALL :Countdown
 
