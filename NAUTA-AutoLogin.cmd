@@ -80,6 +80,7 @@ CALL :Init
 :Init
 	ECHO [?25l
 	CLS
+
 	CALL :Test_Connection
 
 	GOTO :EOF
